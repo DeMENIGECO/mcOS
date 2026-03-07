@@ -35,6 +35,3 @@ Compila il modulo per diventare collaboratore:
 👉 https://form.jotform.com/260624531960051  
 
 Ogni contributo è importante 🚀
-
-
-
