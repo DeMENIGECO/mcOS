@@ -35,3 +35,10 @@ Compila il modulo per diventare collaboratore:
 👉 https://form.jotform.com/260624531960051  
 
 Ogni contributo è importante 🚀
+
+---
+
+## 🤝 Contribuzioni
+
+Per vedere chi ha collaborato a mcOS, vedi il file `CONTRIBUTIONS.md`:
+👉 https://github.com/DeMENIGECO/mcOS/tree/main/CONTRIBUTIONS.md
