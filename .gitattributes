@@ -6,3 +6,6 @@ README.md export-ignore
 
 # Esclude i file di configurazione GitHub dalle release
 .github/ export-ignore
+.gitattributes export-ignore
+
+
