@@ -1,43 +1,76 @@
 # 🖥️ mcOS
-Un progetto che ricrea l’esperienza di macOS utilizzando solo **HTML, CSS e JavaScript**.
+
+mcOS è un progetto che ricrea l’esperienza di un sistema operativo in stile macOS utilizzando esclusivamente **HTML, CSS e JavaScript**.
 
 ---
 
-## 🚀 Avvio
+## 🚀 Avvio rapido
 
-Non serve installare nulla!  
-Vai alla GitHub Page ufficiale:
+Non è necessaria alcuna installazione.
 
-👉 https://demenigeco.github.io/mcOS  
+👉 Apri la versione online:  
+https://demenigeco.github.io/mcOS  
 
-e scegli la versione che vuoi provare.
+Scegli la versione che vuoi provare direttamente dal sito.
 
 ---
 
 ## 💾 Utilizzo in locale
 
-Vuoi usare mcOS senza internet?
+Vuoi usare mcOS offline?
 
-1. Vai nel repository del progetto.
-2. Scarica la cartella della versione che ti interessa.
-3. Estrai i file.
-4. Apri `index.html` nel browser.
+1. Scarica la versione che ti interessa  
+2. Estrai i file sul tuo computer  
+3. Apri `index.html` nel browser  
 
-Semplice e veloce ⚡
+mcOS funzionerà direttamente senza configurazioni aggiuntive ⚡
 
 ---
 
-## 🤝 Collabora al progetto
+## ✨ Caratteristiche
+
+- Interfaccia in stile macOS  
+- Realizzato solo con tecnologie web (HTML, CSS, JS)  
+- Diverse versioni disponibili  
+- Esperienza simulata di un sistema operativo  
+- Leggero e avviabile in qualsiasi browser  
+
+---
+
+## 🤝 Contribuire al progetto
 
 Vuoi aiutare a migliorare mcOS?
 
-Compila il modulo per diventare collaboratore:  
-👉 https://form.jotform.com/260624531960051  
+👉 Compila il modulo collaboratori:  
+https://form.jotform.com/260624531960051  
 
-Ogni contributo è importante 🚀
+Ogni contributo è benvenuto 🚀
 
-Per vedere chi ha collaborato a mcOS, vedi il file `.github/user-contributes.md`: \
-👉 https://github.com/DeMENIGECO/mcOS/tree/main/.github/user-contributes.md
+---
 
->[!NOTE]
->Dovrete rispettare il [Codice di condotta](https://github.com/DeMENIGECO/mcOS/tree/main/.github/CODE_OF_CONDUCT.md) e [la Guida ai contributi](https://github.com/DeMENIGECO/mcOS/tree/main/.github/CONTRIBUTING)
+## 👥 Collaboratori
+
+Per vedere chi ha contribuito al progetto:  
+https://github.com/DeMENIGECO/mcOS/tree/main/.github/user-contributes.md  
+
+---
+
+## 📌 Regole del progetto
+
+Prima di contribuire, assicurati di rispettare:
+
+- Il Codice di Condotta  
+- La Guida ai Contributi  
+
+👉 Codice di condotta:  
+https://github.com/DeMENIGECO/mcOS/tree/main/.github/CODE_OF_CONDUCT.md  
+
+👉 Contributing guide:  
+https://github.com/DeMENIGECO/mcOS/tree/main/.github/CONTRIBUTING.md  
+
+---
+
+## 💙 Nota finale
+
+mcOS è un progetto creato per imparare, sperimentare e migliorare insieme.  
+Ogni contributo aiuta a farlo crescere 🚀
