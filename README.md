@@ -36,10 +36,6 @@ Compila il modulo per diventare collaboratore:
 
 Ogni contributo è importante 🚀
 
----
-
-## 🤝 Contribuzioni
-
 Per vedere chi ha collaborato a mcOS, vedi il file `.github/user-contributes.md`: \
 👉 https://github.com/DeMENIGECO/mcOS/tree/main/.github/user-contributes.md
 
