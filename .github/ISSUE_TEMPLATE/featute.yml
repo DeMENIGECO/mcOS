@@ -1,0 +1,88 @@
+name: Feature request
+description: Suggerisci una nuova funzionalità per mcOS
+title: "[FEATURE] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Hai un’idea per migliorare mcOS? 🚀  
+        Raccontacela qui sotto!
+
+  - type: input
+    id: summary
+    attributes:
+      label: Riassunto della funzione
+      description: Descrivi la tua idea in una frase
+      placeholder: "Es: Aggiungere un centro notifiche stile mcOS Wa beta 67"
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problema o bisogno
+      description: Quale problema risolve questa funzione?
+      placeholder: |
+        "Attualmente è difficile gestire le notifiche..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Soluzione proposta
+      description: Come dovrebbe funzionare la tua idea?
+      placeholder: |
+        1. Apri il pannello laterale
+        2. Visualizzi tutte le notifiche
+        3. Le puoi eliminare o archiviare
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternative considerate
+      description: Hai pensato ad altre soluzioni?
+      placeholder: "Es: popup invece di pannello laterale"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Importanza della funzione
+      options:
+        - Bassa (nice to have)
+        - Media (utile)
+        - Alta (molto importante)
+        - Critica (necessaria per mcOS)
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Versione mcOS
+      description: Dove vorresti questa funzione?
+      placeholder: "es. mcOS Wa Beta 67"
+    validations:
+      required: false
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Contesto aggiuntivo
+      description: Screenshot, idee, dettagli extra
+      placeholder: "Puoi descrivere o incollare qualsiasi cosa utile"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Conferma
+      options:
+        - label: Questa funzione non è già presente in mcOS
+          required: true
