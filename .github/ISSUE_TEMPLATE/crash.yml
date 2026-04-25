@@ -1,0 +1,119 @@
+name: Crash report
+description: Segnala un crash di mcOS
+title: "[CRASH] "
+labels: ["crash"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        mcOS ha incontrato un problema critico 💥  
+        Compila questo report per aiutarci a capire cosa è successo.
+
+  - type: input
+    id: summary
+    attributes:
+      label: Riassunto del crash
+      description: Descrivi cosa è successo prima del crash
+      placeholder: "Es: mcOS si è spento improvvisamente aprendo il pannello O5"
+    validations:
+      required: true
+
+  - type: textarea
+    id: when
+    attributes:
+      label: Quando è avvenuto il crash?
+      description: Descrivi il momento preciso
+      placeholder: |
+        - Durante l’avvio
+        - Aprendo un’app
+        - Dopo un aggiornamento
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Passi per riprodurre il crash
+      description: Come possiamo farlo succedere di nuovo?
+      placeholder: |
+        1. Avvia mcOS
+        2. Apri ...
+        3. Boom 💥 crash
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Comportamento atteso
+      description: Cosa avrebbe dovuto fare mcOS?
+      placeholder: "mcOS dovrebbe continuare a funzionare normalmente"
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Cosa è successo davvero
+      description: Descrivi il crash
+      placeholder: "Schermo nero / riavvio / freeze totale / errore"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Gravità del crash
+      options:
+        - Bassa (si è chiuso un’app)
+        - Media (freeze temporaneo)
+        - Alta (riavvio necessario)
+        - Critica (sistema inutilizzabile)
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Versione mcOS
+      description: Versione in cui è avvenuto il crash
+      placeholder: "es. mcOS Wa Beta 67"
+    validations:
+      required: true
+
+  - type: textarea
+    id: system
+    attributes:
+      label: Sistema
+      description: Informazioni sul dispositivo
+      placeholder: |
+        CPU: Orange Silicon O5
+        RAM: DDR 67 40GB
+        Dispositivo: Orange mcBook O5
+        Browser: Safari
+        OS: mcOS Wa Beta 67
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Log del crash
+      description: Incolla eventuali errori o log
+      render: shell
+      placeholder: "ERROR: kernel panic / memory overflow / ecc..."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Conferma
+      options:
+        - label: Ho verificato che il crash non sia già stato segnalato
+          required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        💡 mcOS Crash Report System — aiuta a migliorare la stabilità del sistema.
