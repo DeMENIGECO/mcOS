@@ -1,0 +1,101 @@
+name: Bug report
+description: Segnala un problema in mcOS
+title: "[BUG] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Grazie per aver segnalato un bug in mcOS 🧩  
+        Compila questo modulo con più dettagli possibili.
+
+  - type: input
+    id: summary
+    attributes:
+      label: Riassunto del problema
+      description: Descrivi il bug in una frase breve
+      placeholder: "Es: Il sistema si blocca quando apro le impostazioni"
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Passi per riprodurlo
+      description: Scrivi cosa fai per far comparire il bug
+      placeholder: |
+        1. Apri mcOS
+        2. Vai su ...
+        3. Clicca su ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Comportamento atteso
+      description: Cosa dovrebbe succedere normalmente?
+      placeholder: "Il sistema dovrebbe aprire le impostazioni senza errori"
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Comportamento reale
+      description: Cosa succede davvero?
+      placeholder: "Si blocca / crasha / non risponde"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Gravità
+      options:
+        - Bassa
+        - Media
+        - Alta
+        - Critica
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Versione mcOS
+      description: Che versione stai usando?
+      placeholder: "es. mcOS Wa beta 67"
+    validations:
+      required: true
+
+  - type: textarea
+    id: system
+    attributes:
+      label: Informazioni sistema
+      description: Hardware / OS / browser
+      placeholder: |
+        CPU: Orange Silicon O5
+        RAM: DDR 67 40GB
+        Dispositivo: Orange mcBook O5
+        Browser: Safari
+        OS: mcOS Wa Beta 67
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Log o errori
+      description: Incolla eventuali messaggi di errore
+      render: shell
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Conferma
+      options:
+        - label: Ho cercato bug simili prima di aprire questa issue
+          required: true
