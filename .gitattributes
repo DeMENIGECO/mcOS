@@ -1,0 +1,8 @@
+# mcOS .gitattributes configuration
+# Questo file controlla cosa viene incluso negli export (zip/release)
+
+# Esclude il README dagli archivi esportati
+README.md export-ignore
+
+# Esclude i file di configurazione GitHub dalle release
+.github/ export-ignore
