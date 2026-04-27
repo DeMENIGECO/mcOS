@@ -1,0 +1,23 @@
+                                        == MCOS CREDITS ==
+
+        Italiano: Qui ci sono i creatori e sviluppatori di McOS e del suo Kernel ("Refne", versione 1)
+            English: Here are the creators and developers of McOS and its Kernel ("Refne", version 1)
+
+                                        == SYSTEM CREDITS ==
+
+                                        Creatori/creators
+                                    - @DeMENIGECO (DomeniGeco)
+
+                                      Sviluppatori/developers
+                                    - @DeMENIGECO (DomeniGeco)
+
+                                            Designers
+                                    - @DeMENIGECO (DomeniGeco)
+
+                                       == KERNEL CREDITS ==
+
+                                        Creatori/creators
+                                    - @DeMENIGECO (DomeniGeco)
+
+                                    Sviluppatori/developers
+                                   - @DeMENIGECO (DomeniGeco)

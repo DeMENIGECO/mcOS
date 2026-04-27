@@ -55,7 +55,7 @@
   </div>
     <span id="spotlightBtn"> 🔍</span>
     <span onclick="toggleLaunchboard()"> ⏹️</span>
-    <span onclick="mcAlert('Orange Intelligence', 'Ancora non disponibile')">🧠</span>
+    <span onclick="mcAlert('Orange Intelligence', 'Chat terminata'); startAI();">🧠</span>
   </div>
   <div id="menu-light">
     <span onclick="mcAlert('Wi-Fi', 'Wi-Fi: attivato/disattivato. Connesso a rete: mcintosh HD.')"> 🛜</span>
@@ -103,6 +103,7 @@ mcAlert('Calendario', html, true);
 <script src="System/js/system.js"></script>
 <script src="System/data/spotlight.js"></script>
 <script src="System/data/launchboard.js"></script>
+<script src="System/js/orange.js"></script>
 
 <script>
   // Spotlight button
@@ -115,6 +116,9 @@ mcAlert('Calendario', html, true);
   }
   setInterval(updateClock, 1000);
   updateClock();
+
+  // Notifica iniziale
+  mcAlert("Benvenuto in mcOS Taho!", "Siamo arrivatti alla build 2.0.0! Puoi vedere le novità in Impostazioni -> Info device -> Novità");
 </script>
 
 </body>

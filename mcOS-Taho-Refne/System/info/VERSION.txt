@@ -1,0 +1,17 @@
+                        == MCOS INFORMATION ==
+
+                        mcOS Version: Taho - 2.0.0
+                          mcOS Kernel: Refne
+                          mcOS Kernel Version: 1
+
+                      mcOS Security Patchs: 25/04/2026
+
+                            == ITALIANO ==
+
+               mcOS è una copia di MacOS fatta in HTML/CSS/JS
+            Per vedere il testo della licenza, vedi LICENSE.txt
+
+                            == ENGLISH ==
+
+             mcOS is a copy of macOS made in HTML/CSS/JS.
+               To see the license text, see LICENSE.txt

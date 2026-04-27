@@ -1,0 +1,5 @@
+== WHAT'S NEW: MCOS TAHO REFNE; BUILD 2.0.0 ==
+
+- Impostazioni e terminale migliorate
+- Notifica iniziale
+- Orange intelligence

@@ -1,64 +1,106 @@
 <style>
 body {
  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
- background: transparent;
- color: white;
+ background: #0b0b0b;
+ color: #00ff88;
  margin: 0;
  padding: 10px;
 }
 
-input, textarea, button {
- font-family: -apple-system;
- padding: 10px 15px;
+#terminal {
+ height: 300px;
+ overflow-y: auto;
+ background: rgba(0,0,0,0.6);
+ padding: 10px;
  border-radius: 12px;
+}
+
+.line {
+ white-space: pre-wrap;
+ margin: 2px 0;
+}
+
+input {
+ width: 100%;
+ padding: 10px;
+ margin-top: 10px;
+ border-radius: 10px;
  border: none;
  outline: none;
- margin-top: 10px;
- background: rgba(255,255,255,0.15);
+ background: rgba(255,255,255,0.1);
  color: white;
- box-shadow: 0 5px 15px rgba(0,0,0,0.3);
- transition: 0.2s;
-}
-
-input:focus, textarea:focus, button:hover {
- background: rgba(255,255,255,0.25);
- box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-}
-
-table {
- width: 100%;
- border-collapse: collapse;
- margin-top: 10px;
-}
-
-td, th {
- padding: 8px;
- border-bottom: 1px solid rgba(255,255,255,0.2);
-}
-
-th {
- font-weight: bold;
- text-align: left;
-}
-
-::-webkit-scrollbar {
- width: 10px;
-}
-
-::-webkit-scrollbar-track {
- background: rgba(255,255,255,0.05);
- border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
- background: rgba(255,255,255,0.3);
- border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
- background: rgba(255,255,255,0.5);
 }
 </style>
 
-<h2>Terminal</h2>
-<input placeholder="type command">
+<h2>mcOS Terminal</h2>
+
+<div id="terminal"></div>
+<input id="cmd" placeholder="user@mcintosh-hd:~$" onkeydown="handle(event)">
+
+<script>
+let cwd = "/home/user";
+
+function print(text) {
+ const t = document.getElementById("terminal");
+ t.innerHTML += "<div class='line'>" + text + "</div>";
+ t.scrollTop = t.scrollHeight;
+}
+
+function handle(e) {
+ if (e.key === "Enter") {
+  let input = e.target.value;
+  print("user@mcintosh-hd:" + cwd + "$ " + input);
+  run(input);
+  e.target.value = "";
+ }
+}
+
+function run(input) {
+ let args = input.trim().split(" ");
+ let cmd = args[0];
+
+ switch(cmd) {
+
+  case "help":
+   print("Commands:");
+   print("ls, pwd, clear, echo, date, whoami, mkdir, cd");
+   break;
+
+  case "clear":
+   document.getElementById("terminal").innerHTML = "";
+   break;
+
+  case "pwd":
+   print(cwd);
+   break;
+
+  case "whoami":
+   print("user@mcintosh-hd");
+   break;
+
+  case "date":
+   print(new Date().toString());
+   break;
+
+  case "echo":
+   print(args.slice(1).join(" "));
+   break;
+
+  case "ls":
+   print("Desktop  Documents  Downloads  Projects");
+   break;
+
+  case "mkdir":
+   print("created folder: " + (args[1] || "unnamed"));
+   break;
+
+  case "cd":
+   cwd = "/" + (args[1] || "home/user");
+   print("changed directory to " + cwd);
+   break;
+
+  default:
+   if (cmd !== "") print("zsh: command not found: " + cmd);
+ }
+}
+</script>

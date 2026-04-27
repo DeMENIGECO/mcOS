@@ -8,7 +8,6 @@ body {
 }
 
 input, textarea, button {
- font-family: -apple-system;
  padding: 10px 15px;
  border-radius: 12px;
  border: none;
@@ -61,4 +60,15 @@ th {
 </style>
 
 <h2>Settings</h2>
-System Preferences
+
+<h3>Info device</h3>
+<button onclick="window.parent.location.href = '../info/VERSION.txt'">Versione</button>
+<button onclick="window.parent.location.href = '../info/LICENSE.txt'">Licenza sistema</button>
+<button onclick="window.parent.location.href = '../info/CREDITS.txt'">Crediti</button>
+<button onclick="window.parent.location.href = '../info/WHATS-NEW.txt'">Novità</button>
+
+<h3>Aggiornamento</h3>
+<button onclick="window.parent.location.href = '../info/VERSION.txt'">Vedi versione attuale</button>
+<p><b>Nessun aggiornamento major disponibile.</b></p>
+
+<button onclick="window.location.reload()">Verifica disponibilità aggiornamenti</button>
