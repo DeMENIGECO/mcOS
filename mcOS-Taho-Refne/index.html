@@ -3,124 +3,150 @@
 <head>
 <meta charset="UTF-8">
 <title>mcOS Taho</title>
-<link rel="stylesheet" href="System/css/style.css">
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+/* SCHERMATA NERA BOOT */
+#bootScreen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#logo {
+  font-size: 80px;
+}
+
+/* LOADING */
+#loading {
+  margin-top: 20px;
+  font-size: 18px;
+  opacity: 0.7;
+}
+
+#loginScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background: url("System/other/wallpaper.png") center / cover no-repeat fixed;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+}
+/* BOX LOGIN */
+#loginBox {
+  background: rgba(0,0,0,0.4);
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+#userIcon {
+  font-size: 60px;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* LOGIN TEXT */
+#loginText {
+  margin-top: 15px;
+  font-size: 14px;
+  height: 20px;
+}
+</style>
 </head>
+
 <body>
 
-<!-- Menubar -->
-<div id="menubar">
-  <div class="menu-left">
-    <b>🍊</b>
-    <b> finder</b>
-     <div class="menu-item">
-    File
-    <div class="dropdown">
-      <div onclick="openApp('finder.html')">Nuova finestra</div>
-      <div>Apri</div>
-      <div>Chiudi</div>
-    </div>
-  </div>
-
-  <div class="menu-item">
-    Modifica
-    <div class="dropdown">
-      <div>Annulla</div>
-      <div>Copia</div>
-      <div>Incolla</div>
-    </div>
-  </div>
-
-  <div class="menu-item">
-    Vedi
-    <div class="dropdown">
-      <div>Zoom avanti</div>
-      <div>Zoom indietro</div>
-    </div>
-  </div>
-
-  <div class="menu-item">
-    Vai
-    <div class="dropdown">
-      <div>Home</div>
-      <div>Desktop</div>
-    </div>
-  </div>
-
-  <div class="menu-item">
-      Finestra  
-    <div class="dropdown">
-      <div>Riduci</div>
-      <div>Chiudi finestra</div>
-    </div>
-  </div>
-    <span id="spotlightBtn"> 🔍</span>
-    <span onclick="toggleLaunchboard()"> ⏹️</span>
-    <span onclick="mcAlert('Orange Intelligence', 'Chat terminata'); startAI();">🧠</span>
-  </div>
-  <div id="menu-light">
-    <span onclick="mcAlert('Wi-Fi', 'Wi-Fi: attivato/disattivato. Connesso a rete: mcintosh HD.')"> 🛜</span>
-    <span onclick="mcAlert('Bluetooth', 'Bluetooth attivato/disattivato.')"> 🔵</span>
-    <span onclick="mcAlert('Batteria', 'Batteria: 100%. Ricarica: No.')"> 🔋</span>
-    <span id="clock"
-onclick="
-let now = new Date();
-
-let html = `
-<div style='margin-bottom:10px; font-size:14px;'>
-${now.toLocaleDateString(undefined, {
-weekday: 'long',
-day: 'numeric',
-month: 'long',
-year: 'numeric'
-})}
+<!-- BOOT SCREEN -->
+<div id="bootScreen">
+  <div id="logo">🍊</div>
+  <div id="loading">Avvio sistema...</div>
 </div>
 
-<input type='date'
-style='
-width:100%;
-padding:8px;
-border-radius:10px;
-border:none;
-background:rgba(255,255,255,0.3);
-color:white;
-'>
-`;
+<!-- LOGIN SCREEN -->
+<div id="loginScreen">
+  <div id="loginBox">
+    <div id="userIcon">👤</div>
+    <div>Utente</div>
 
-mcAlert('Calendario', html, true);
-">
-</span>
+    <button onclick="login()">Accedi</button>
+
+    <div id="loginText"></div>
   </div>
 </div>
 
-<!-- Dock -->
-<div id="dock"></div>
-
-<!-- Trash -->
-<div id="trash">🗑️</div>
-
-<!-- Script -->
-<script src="System/js/mcalert.js"></script>
-<script src="System/js/system.js"></script>
-<script src="System/data/spotlight.js"></script>
-<script src="System/data/launchboard.js"></script>
-<script src="System/js/orange.js"></script>
+<!-- AUDIO -->
+<audio id="bootSound" src="System/other/ck.m4a"></audio>
 
 <script>
-  // Spotlight button
-  document.getElementById("spotlightBtn").onclick = () => toggleSpotlight();
+let dots = "";
+let loginInterval;
 
-  // Aggiorna orologio in menubar
-  function updateClock() {
-    const d = new Date();
-    document.getElementById("clock").textContent = d.toLocaleTimeString();
-  }
-  setInterval(updateClock, 1000);
-  updateClock();
+// dopo 2 secondi passa al login
+setTimeout(() => {
+  document.getElementById("bootScreen").style.display = "none";
+  document.getElementById("loginScreen").style.display = "flex";
+}, 2000);
 
-  // Notifica iniziale
-  mcAlert("Benvenuto in mcOS Taho!", "Siamo arrivatti alla build 2.0.0! Puoi vedere le novità in Impostazioni -> Info device -> Novità");
+// animazione loading puntini nella schermata login
+function startLoginAnimation() {
+  let text = document.getElementById("loginText");
+
+  loginInterval = setInterval(() => {
+    if (dots.length >= 3) dots = "";
+    else dots += ".";
+
+    text.textContent = "Login" + dots;
+  }, 400);
+}
+
+function stopLoginAnimation() {
+  clearInterval(loginInterval);
+}
+
+// LOGIN
+function login() {
+  let audio = document.getElementById("bootSound");
+  audio.play().catch(() => {});
+
+  startLoginAnimation();
+
+  setTimeout(() => {
+    stopLoginAnimation();
+    window.location.href = "desktop.html";
+  }, 2500);
+}
 </script>
 
 </body>
-
-</html> 
+</html>

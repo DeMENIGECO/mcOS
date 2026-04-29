@@ -1,6 +1,6 @@
                         == MCOS INFORMATION ==
 
-                        mcOS Version: Taho - 2.0.0
+                        mcOS Version: Taho - 2.0.1
                           mcOS Kernel: Refne
                           mcOS Kernel Version: 1
 

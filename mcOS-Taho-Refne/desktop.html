@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>mcOS Taho</title>
+<link rel="stylesheet" href="System/css/style.css">
+</head>
+<body>
+
+<!-- Menubar -->
+<div id="menubar">
+  <div class="menu-left">
+    <b>🍊</b>
+    <b> finder</b>
+     <div class="menu-item">
+    File
+    <div class="dropdown">
+      <div onclick="openApp('finder.html')">Nuova finestra</div>
+      <div>Apri</div>
+      <div>Chiudi</div>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    Modifica
+    <div class="dropdown">
+      <div>Annulla</div>
+      <div>Copia</div>
+      <div>Incolla</div>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    Vedi
+    <div class="dropdown">
+      <div>Zoom avanti</div>
+      <div>Zoom indietro</div>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    Vai
+    <div class="dropdown">
+      <div>Home</div>
+      <div>Desktop</div>
+    </div>
+  </div>
+
+  <div class="menu-item">
+      Finestra  
+    <div class="dropdown">
+      <div>Riduci</div>
+      <div>Chiudi finestra</div>
+    </div>
+  </div>
+    <span id="spotlightBtn"> 🔍</span>
+    <span onclick="toggleLaunchboard()"> ⏹️</span>
+    <span onclick="mcAlert('Orange Intelligence', 'Chat terminata'); startAI();">🧠</span>
+    <span onclick="window.location.href = 'index.html'"> 🔓</span>
+  </div>
+  <div id="menu-light">
+    <span onclick="mcAlert('Wi-Fi', 'Wi-Fi: attivato/disattivato. Connesso a rete: mcintosh HD.')"> 🛜</span>
+    <span onclick="mcAlert('Bluetooth', 'Bluetooth attivato/disattivato.')"> 🔵</span>
+    <span onclick="mcAlert('Batteria', 'Batteria: 100%. Ricarica: No.')"> 🔋</span>
+    <span id="clock"
+onclick="
+let now = new Date();
+
+let html = `
+<div style='margin-bottom:10px; font-size:14px;'>
+${now.toLocaleDateString(undefined, {
+weekday: 'long',
+day: 'numeric',
+month: 'long',
+year: 'numeric'
+})}
+</div>
+
+<input type='date'
+style='
+width:100%;
+padding:8px;
+border-radius:10px;
+border:none;
+background:rgba(255,255,255,0.3);
+color:white;
+'>
+`;
+
+mcAlert('Calendario', html, true);
+">
+</span>
+  </div>
+</div>
+
+<!-- Dock -->
+<div id="dock"></div>
+
+<!-- Trash -->
+<div id="trash">🗑️</div>
+
+<!-- Script -->
+<script src="System/js/mcalert.js"></script>
+<script src="System/js/system.js"></script>
+<script src="System/data/spotlight.js"></script>
+<script src="System/data/launchboard.js"></script>
+<script src="System/js/orange.js"></script>
+
+<script>
+  // Spotlight button
+  document.getElementById("spotlightBtn").onclick = () => toggleSpotlight();
+
+  // Aggiorna orologio in menubar
+  function updateClock() {
+    const d = new Date();
+    document.getElementById("clock").textContent = d.toLocaleTimeString();
+  }
+  setInterval(updateClock, 1000);
+  updateClock();
+
+  // Notifica iniziale
+  mcAlert("Benvenuto in mcOS Taho!", "Siamo arrivatti alla build 2.0.1! Puoi vedere le novità in Impostazioni -> Info device -> Novità");
+
+  // Avvia Suono
+  function bootSound() {
+  let audio = new Audio("System/other/boot.mp3");
+  audio.play();
+}
+ 
+bootSound();
+</script>
+
+</body>
+
+</html> 
