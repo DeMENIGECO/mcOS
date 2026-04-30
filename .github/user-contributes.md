@@ -15,5 +15,8 @@
 
 Vuoi contribuire al progetto?
 
-Compila il modulo qui:  
-👉 https://form.jotform.com/260624531960051
+Ecco i passaggi:
+
+- Crea un issue con il template "contribute"
+- Fai il titolo "Colaboratore mcOS: @tuousername"
+- Non mettere il corpo
