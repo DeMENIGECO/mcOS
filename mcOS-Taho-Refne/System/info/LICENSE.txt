@@ -1,5 +1,5 @@
                                        MCOS LICENSE
-                                 VERSION TAHO, BUILD 2.0.1
+                                 VERSION TAHO, BUILD 2.0.2
          LINKS: https://github.com/DeMENIGECO/mcOS - https://demenigeco.github.io/mcOS/mcOS-Taho-Refne/
 
 ---------------------------------------------------------------------------------------------------------------------------

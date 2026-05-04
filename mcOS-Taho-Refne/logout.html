@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>mcOS Taho</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+/* SCHERMATA NERA BOOT */
+#bootScreen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#logo {
+  font-size: 80px;
+}
+
+/* LOADING */
+#loading {
+  margin-top: 20px;
+  font-size: 18px;
+  opacity: 0.7;
+}
+
+#loginScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background: url("System/other/wallpaper.png") center / cover no-repeat fixed;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+}
+/* BOX LOGIN */
+#loginBox {
+  background: rgba(0,0,0,0.4);
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+#userIcon {
+  font-size: 60px;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* LOGIN TEXT */
+#loginText {
+  margin-top: 15px;
+  font-size: 14px;
+  height: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOGIN SCREEN -->
+<div id="loginScreen">
+  <div id="loginBox">
+    <div id="userIcon">👤</div>
+    <div>Utente</div>
+
+    <button onclick="login()">Accedi</button>
+
+    <div id="loginText"></div>
+  </div>
+</div>
+
+<!-- AUDIO -->
+<audio id="bootSound" src="System/other/ck.m4a"></audio>
+
+<script>
+let dots = "";
+let loginInterval;
+
+
+// animazione loading puntini nella schermata login
+function startLoginAnimation() {
+  let text = document.getElementById("loginText");
+
+  loginInterval = setInterval(() => {
+    if (dots.length >= 3) dots = "";
+    else dots += ".";
+
+    text.textContent = "Login" + dots;
+  }, 400);
+}
+
+function stopLoginAnimation() {
+  clearInterval(loginInterval);
+}
+
+// LOGIN
+function login() {
+  let audio = document.getElementById("bootSound");
+  audio.play().catch(() => {});
+
+  startLoginAnimation();
+
+  setTimeout(() => {
+    stopLoginAnimation();
+    window.location.href = "desktop.html";
+  }, 2500);
+}
+</script>
+
+</body>
+</html>

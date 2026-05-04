@@ -1,5 +1,4 @@
-== WHAT'S NEW: MCOS TAHO REFNE; BUILD 2.0.1 ==
+== WHAT'S NEW: MCOS TAHO REFNE; BUILD 2.0.2 ==
 
-- Pagina di Login
-- Tasto logout
-- Nuovo sfondo
+- Nuova sezione impostazioni
+- Logout migliorato
