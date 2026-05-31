@@ -15,8 +15,5 @@
 
 Vuoi contribuire al progetto?
 
-Ecco i passaggi:
-
-- Crea un issue con il template "contribute"
-- Fai il titolo "Colaboratore mcOS: @tuousername"
-- Non mettere il corpo
+Compila il form: \
+https://forms.gle/zhTv8DTqfgcczcWJA
