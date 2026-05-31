@@ -12,8 +12,3 @@ function kernelPanic(msg){
  <p>System halted</p>
  </div>`;
 }
-
-/* esempio trigger */
-document.addEventListener("finderDeleted",()=>{
- kernelPanic("Finder process removed");
-});
