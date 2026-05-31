@@ -41,11 +41,8 @@ mcOS funzionerà direttamente senza configurazioni aggiuntive ⚡
 
 Vuoi aiutare a migliorare mcOS?
 
-Ecco i passaggi:
-
-- Crea un issue con il template "contribute"
-- Fai il titolo "Colaboratore mcOS: @tuousername"
-- Non mettere il corpo
+Compila il form: \
+https://forms.gle/zhTv8DTqfgcczcWJA
 
 Ogni contributo è benvenuto 🚀
 
